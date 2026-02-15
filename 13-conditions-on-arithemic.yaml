@@ -1,0 +1,11 @@
+- name: check number less than 7 or not
+  hosts: local
+  connection: local
+  vars:
+    NUMBER_OF_SESSIONS: 7
+  tasks:
+  - name: is ansible more than 7 sessions
+    ansible.builtin.debug:
+      msg: "Yes, more than 7 sessions"
+    when: NUMBER_OF_SESSIONS > 5
+

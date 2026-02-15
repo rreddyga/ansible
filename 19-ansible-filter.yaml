@@ -1,0 +1,61 @@
+- name: ansible functions/ filters
+  hosts: local
+  connection: local
+  vars:
+    TOPICS:  linux, shell, ansible, terraform
+    tags: # tags is reserved keyword don't use
+    COURSE: "DevSecOps with AWS"
+    myIP: "258.33.14.00"
+    tagsMap: # tags is reserved keyword don't use  
+      name: ansible
+      project: roboshop
+      component: catalogue
+    tagsList: [
+        {
+            "key":  "name",
+            "value":  "Ansible"
+        },
+        {
+            "key":  "name",
+            "value":  "Shell"
+        }
+        {
+            "key":  "name",
+            "value":  "Terraform"
+        }
+    ]
+  tasks:
+  - name: greeting
+    ansible.builtin.debug:
+      msg: "Hi Ramanareddy, {{ GREETING | default('Good morning') }}"
+  
+  - name: conver string to list
+    ansible.builtin.debug:
+      msg: "{{ TOPICS | split(',')}}" # split the topic based on the comma
+  
+  - name: convert map to list
+    ansible.builtin.debug: 
+      msg:  "{{tagsMap | dict2items}}"
+  
+  - name: convert list to map 
+    ansible.builtin.debug:
+      msg: "{{tagsList | items2dic}}"
+  
+  - name: read students yaml 
+    ansible.builtin.set_fact: # set the dynamic variable
+      students_yaml: "{{ lookup('file','students.yaml') | from_yaml}}"
+  
+  - name: covert YAML to JSON
+    ansible.builtin.debgug:
+      msg: "{{students_yaml | to_nice_json}}"
+  
+  - name: convert course into upper case
+    ansible.builtin.debug:
+      msg: "{{COURSE | upper}"
+
+  - name: convert course into lower case
+    ansible.builtin.debug:
+      msg: "{{COURSE | lower}"
+  - name: check Ip address valid or not
+    ansible.builtin.debug:
+      msg: "{{myIP | ansible.util.ipv4 }}" # we need to install netaddr as ansible developed on python , the package manager pipe3.9 install netaddr

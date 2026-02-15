@@ -1,0 +1,20 @@
+- name: ansible command vs shell
+  hosts: local
+  connection: local
+  tasks:
+  - name: "Ansible commands to findout the root keyword in passwd files"
+    #ansible.builtin.commad: cat /etc/passwd | grep root , as this command is wont work for redirections, piping 
+    ansible.builtin.shell: cat /etc/passwd | grep root
+    register: users_output
+
+  - name: print the output
+    ansible.builtin.debug:
+      msg: {? {users_output: ''} : ''}
+
+  - name: check the files output
+    ansible.builtin.shell: ls -ltrh > files.txt
+    register: files_output
+
+  - name: print the files output
+    ansible.builtin.debug:
+      msg: {? {files_output: ''} : ''}
