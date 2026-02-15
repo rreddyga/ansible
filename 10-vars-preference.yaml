@@ -1,0 +1,25 @@
+- name: variable preference
+  hosts: local
+  connections: local
+  vars:
+    NAME: "Ansible from PLAY"
+  vars_files:
+  - Course.yaml
+  vars_prompt:
+  - name: NAME
+    promt: Please enter Name
+    private: false
+  tasks:
+  - name: print name
+    vars:
+      NAME: "Ansible from tasks"
+      ansible.builtin.debug:
+        msg: "Hi {{NAME}}"
+
+# 1. Args level
+# 2. Tasks level
+# 3. Files
+# 4. promt
+# 5. Play level
+# 6. Inventory
+# any where not defined the ansible server throw UNDEFINED variable

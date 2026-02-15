@@ -1,0 +1,18 @@
+- name: ansisble data types
+  hosts: local
+  connection: local
+  vars:
+    PROGRAM: "DevSecOps with AWS"
+    DURATION: 140
+    IS_LIVE: true
+    DETAILS:
+      MONTHS: 4
+      TRAINSER: "Sivakumar reddy"
+    TOPICS:
+    - linux
+    - shell
+    - ansisble
+  tasks:
+  - name: print variables
+  ansible.builtin.debug:
+    msg: Program {{PROGRAM}} Duration {{DURATION}} Is_live {{IS_LIVE}} Details {{DETAILS}} Topics {{TOPICS}}
