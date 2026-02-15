@@ -8,7 +8,7 @@
     register: id_output
 
   - name: print the output
-    ansible.builtin.debgug:
+    ansible.builtin.debug:
       msg: "{{ id_output }}"
 
   - name: create user
