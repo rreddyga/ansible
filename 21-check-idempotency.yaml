@@ -1,6 +1,6 @@
 - name: Ansible idempotency with builtin collections
   hosts: local
-  collection: local
+  connection: local
   become: yes
   tasks:
   - name: user creation
