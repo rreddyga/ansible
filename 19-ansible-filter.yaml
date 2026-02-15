@@ -5,7 +5,7 @@
     TOPICS: linux, shell, ansible, terraform
     tags: # tags is reserved keyword don't use
     COURSE: "DevSecOps with AWS"
-    myIP: "258.33.14.00"
+    myIP: "192.23.89.123"
     tagsMap: # tags is reserved keyword don't use  
       name: ansible
       project: roboshop
