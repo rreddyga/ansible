@@ -1,0 +1,8 @@
+- name: Ansible idempotency with builtin collections
+  hosts: local
+  collection: local
+  become: yes
+  tasks:
+  - name: user creation
+    ansible.builtin.user: # builtin collection we can get idempotency.
+      name: dharsi # semilar to useradd dharsi
