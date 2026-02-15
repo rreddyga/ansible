@@ -33,7 +33,7 @@
       students_yaml: "{{ lookup('file','students.yaml') | from_yaml}}"
 
   - name: covert YAML to JSON
-    ansible.builtin.debgug:
+    ansible.builtin.debug:
       msg: "{{students_yaml | to_nice_json}}"
 
   - name: convert course into upper case
