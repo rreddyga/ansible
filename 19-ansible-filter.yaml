@@ -45,4 +45,4 @@
       msg: "{{COURSE | lower}}"
   - name: check Ip address valid or not
     ansible.builtin.debug:
-      msg: "{{myIP | ansible.util.ipv4 }}" # we need to install netaddr as ansible developed on python , the package manager pipe3.9 install netaddr
+      msg: "{{myIP | ipv4 }}" # we need to install netaddr as ansible developed on python , the package manager pipe3.9 install netaddr
