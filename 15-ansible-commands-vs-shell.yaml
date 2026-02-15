@@ -17,4 +17,4 @@
 
   - name: print the files output
     ansible.builtin.debug:
-      msg: {? {files_output: ''} : ''}
+      msg: "{{ files_output }}"
