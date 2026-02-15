@@ -5,8 +5,8 @@
   tasks:
   - name: install package
     ansible.builtin.package:
-      name: "{{item.name}}"
-      state: {? {item.state: ''} : ''}
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
 
     loop: # list of map
     - {name: "mysql", state: "absent"} #dictionary/ map
