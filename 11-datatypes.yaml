@@ -14,5 +14,5 @@
     - ansisble
   tasks:
   - name: print variables
-  ansible.builtin.debug:
-    msg: Program {{PROGRAM}} Duration {{DURATION}} Is_live {{IS_LIVE}} Details {{DETAILS}} Topics {{TOPICS}}
+    ansible.builtin.debug:
+      msg: Program {{PROGRAM}} Duration {{DURATION}} Is_live {{IS_LIVE}} Details {{DETAILS}} Topics {{TOPICS}}
