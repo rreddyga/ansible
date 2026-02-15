@@ -9,7 +9,7 @@
 
   - name: print the output
     ansible.builtin.debug:
-      msg: {? {users_output: ''} : ''}
+      msg: "{{ users_output }}"
 
   - name: check the files output
     ansible.builtin.shell: ls -ltrh > files.txt
