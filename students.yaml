@@ -1,0 +1,27 @@
+- name: "Ramana reddy"
+  dob: "1990-08-10"
+  mobileNumber: 97015522
+  address:
+  - flateNumber: 104
+    street: "Obulapuram"
+    city: "Anantapur"
+    type: "permanent"
+
+  - flateNumber: 103
+    street: "Chennampalle"
+    city: "Anantapur"
+    type: "current"
+
+- name: "Dharsi reddy"
+  dob: "1990-08-10"
+  mobileNumber: 97015522
+  address:
+  - flateNumber: 106
+    street: "Bangalore"
+    city: "Bangalore"
+    type: "permanent"
+
+  - flateNumber: 107
+    street: "ATP"
+    city: "Anantapur"
+    type: "current"
