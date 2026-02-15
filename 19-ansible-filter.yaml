@@ -26,7 +26,7 @@
 
   - name: convert list to map
     ansible.builtin.debug:
-      msg: "{{tagsList | items2dic}}"
+      msg: "{{tagsList | items2dict}}"
 
   - name: read students yaml
     ansible.builtin.set_fact: # set the dynamic variable
